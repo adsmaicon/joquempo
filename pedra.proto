@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package pedraPapelTesoura;
+
+service Partida {
+    rpc Jogar (Jogada) returns (Resposta);
+}
+
+message Jogada {
+    Simbolo simbolo1 = 1;
+    Simbolo simbolo2 = 2;
+}
+
+message Resposta {
+    Simbolo vencedor = 1;
+}
+
+enum Simbolo {
+    PEDRA = 0;
+    PAPEL = 1;
+    TESOURA = 2;
+}
+
